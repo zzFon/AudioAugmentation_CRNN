@@ -1,0 +1,10 @@
+CRNN工程
+-crnn.cfg：使用PyTorch cfg model parser工具定义的CRNN结构文件（超参数）
+-config.json：训练方法定义文件（初始化、shuffle、optimizer、learning rate、metrics...）
+-run.py：训练入口
+-eval.py：评估用脚本（写的）
+-saved_cv：训练checkpoint存储地，可以用checkpoint恢复训练或恢复tensorboard
+---xxxx_yyyyyy
+------checkpoints
+---------model_best.pth：训练好的模型参数文件
+------logs：用于tensorboard
