@@ -7,10 +7,12 @@ import torch
 #config['net_mode'] = 'init'
 #config['cfg'] = 
 
-checkpoint = torch.load('saved_cv/1005_155509/checkpoints/model_best.pth')
+checkpoint = torch.load('saved_cv/1005_132955/checkpoints/model_best.pth')
 config = checkpoint['config']
 
-path_dir='D:/urbansound8k-gunshot/'
+#path_dir='D:/urbansound8k-gunshot/'
+#path_dir='D:/UrbanSound8K_All4Eval/'
+path_dir='D:/UrbanSound8K_augmented_All4Eval/'
 path_list=os.listdir(path_dir)
 
 for path_audio in path_list:

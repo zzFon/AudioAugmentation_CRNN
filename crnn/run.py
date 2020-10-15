@@ -73,18 +73,19 @@ def infer_main(file_path, config, checkpoint):
     end=time.time()
     time1=end-start
     duration = librosa.get_duration(filename=file_path)
-    print('经过CRNN所用时间为{}'.format(time1))
-    print('音频长度为{}s'.format(duration))
-    print("检测时间/音频时间 = %.2f%%" % (time1/duration*100))
-    print('有{}的信心认为它是{}类'.format(conf, label))
-
+    #print('经过CRNN所用时间为{}'.format(time1))
+    #print('音频长度为{}s'.format(duration))
+    #print("检测时间/音频时间 = %.2f%%" % (time1/duration*100))
+    #print('有{}的信心认为它是{}类'.format(conf, label))
+    print('inferring...')
     #f = open('gunshot_info.csv','a+','w',encoding='utf-8',newline='' "")
     #csv_writer = csv.writer(f)
     #csv_writer.writerow([file_path,time1,duration,label,conf,"%.2f%%" % (time1/duration*100)])
     #f.close()
     path  = "gunshot.csv"
     #          文件路径 检测时间 音频时长 标签 confidence 检测时间/音频时间
-    data_row = [file_path,time1,duration,label,conf,"%.2f%%" % (time1/duration*100)]
+
+    data_row = [file_path,time1,duration,label,conf,"%.2f%%" % (time1/duration*100),file_path.split('-')[1]]
     write_csv(path, data_row)
     #inference.draw(file_path, label, conf)
 
